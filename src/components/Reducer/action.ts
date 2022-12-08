@@ -1,9 +1,9 @@
 import { Product } from "../../models/Product";
 
 export enum ShopActionType {
-    ADDTOCART = 'add',
-    REMOVEFROMCART = 'remove',
-    UPDATETOTALAMOUNT = 'update',
+    ADD = 'add',
+    REMOVE = 'remove',
+    UPDATE = 'update',
   }
   
   export type ShopAction = {
@@ -12,16 +12,16 @@ export enum ShopActionType {
   };
   
   export const add = (product: Product): ShopAction => ({
-    type: ShopActionType.ADDTOCART,
+    type: ShopActionType.ADD,
     payload: product,
   });
   
   export const remove = (product: Product): ShopAction => ({
-    type: ShopActionType.REMOVEFROMCART,
+    type: ShopActionType.REMOVE,
     payload: product,
   });
 
   export const update = (total: number): ShopAction => ({
-    type: ShopActionType.UPDATETOTALAMOUNT,
+    type: ShopActionType.UPDATE,
     payload: total,
   });
